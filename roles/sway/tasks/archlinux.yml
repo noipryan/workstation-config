@@ -4,6 +4,5 @@
 
 - name: Install Sway Desktop
   community.general.pacman:
-    name:
-      - "{{ sway_packages }}"
+    name: "{{ sway_packages }}"
     state: present
