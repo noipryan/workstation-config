@@ -4,7 +4,7 @@
 
 - name: Install common packages
   community.general.pacman:
-    name: "{{ common_packages }}"
+    name: "{{ common_desktop }}"
     state: present
 
 - name: Install common AUR packages
