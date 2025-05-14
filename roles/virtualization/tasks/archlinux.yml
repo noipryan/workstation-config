@@ -1,0 +1,30 @@
+---
+- name: Get the non root remote user
+  ansible.builtin.set_fact:
+    remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+- name: Install libvirt
+  community.general.pacman:
+    name:
+      - bridge-utils
+      - guestfs-tools
+      - guestfs-python
+      - libvirt
+      - qemu-full
+      - qemu-img
+      - openvswitch
+      - virt-install
+      - virt-manager
+      - virt-viewer
+    state: present
+
+- name: Add libvirt group
+  ansible.builtin.group:
+    name: libvirt
+    state: present
+
+- name: Add user to libvirt group
+  ansible.builtin.user:
+    name: "{{ remote_regular_user }}"
+    groups: libvirt
+    append: true

@@ -1,0 +1,27 @@
+---
+- name: Include distro specific variables
+  ansible.builtin.include_vars: "{{ ansible_distribution | lower }}.yml"
+
+- name: Add copr repo for zellij
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: varlad/zellij
+
+- name: Add copr repo for Eza
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: alternateved/eza
+
+- name: Add copr repo for Starship
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: atim/starship
+
+- name: Install common packages
+  become: true
+  ansible.builtin.package:
+    name: "{{ common_terminal }}"
+    state: present

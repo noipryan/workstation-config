@@ -1,0 +1,8 @@
+---
+- name: Install VSCode
+  community.general.pacman:
+    name:
+      - visual-studio-code-bin
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+    state: present

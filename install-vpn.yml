@@ -1,0 +1,7 @@
+---
+- name: Install VPN Clients
+  hosts: localhost
+
+  roles:
+    - openfortivpn
+    - tailscale

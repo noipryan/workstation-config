@@ -1,0 +1,27 @@
+---
+sway_packages:
+  - brightnessctl
+  - gnome-keyring
+  - grim
+  - kanshi
+  - networkmanager
+  - network-manager-applet
+  - nwg-look
+  - pavucontrol
+  - playerctl
+  - polkit
+  - rofi
+  - sddm
+  - sway
+  - swaybg
+  - swayidle
+  - swaylock
+  - swaync
+  - texlive-fontsextra  # fontawesome-fonts
+  - waybar
+  - wayland
+  - wdisplays
+  - wf-recorder
+  - wl-clipboard
+  - wlogout
+  - xdg-utils

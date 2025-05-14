@@ -1,0 +1,8 @@
+---
+- name: Install Zed Editor
+  community.general.pacman:
+    name:
+      - zed-preview-bin
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+    state: present

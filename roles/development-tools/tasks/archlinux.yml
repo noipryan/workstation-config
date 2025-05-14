@@ -1,0 +1,6 @@
+---
+- name: Install Development Tools
+  community.general.pacman:
+    name:
+      - base-devel
+    state: present

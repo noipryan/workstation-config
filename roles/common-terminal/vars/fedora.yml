@@ -1,0 +1,31 @@
+---
+common_terminal:
+  - ansible
+  - ansible-lint
+  - bat
+  - curl
+  - eza
+  - fastfetch
+  - fzf
+  - git
+  - helix
+  - krb5-workstation
+  - lldpd
+  - util-linux-user
+  - neovim
+  - nmap
+  - nodejs
+  - python3-neovim
+  - python3-pip
+  - python3-netaddr
+  - python3-numpy
+  - python3-pandas
+  - screen
+  - openssh-askpass
+  - starship
+  - vim-enhanced
+  - wget
+  - yamllint
+  - zellij
+  - zoxide
+  - zsh

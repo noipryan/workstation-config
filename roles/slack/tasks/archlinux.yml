@@ -1,0 +1,8 @@
+---
+- name: Install Slack Desktop
+  community.general.pacman:
+    name:
+      - slack-desktop
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+    state: present

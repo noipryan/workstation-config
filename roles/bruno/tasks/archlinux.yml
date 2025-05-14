@@ -1,0 +1,8 @@
+---
+- name: Install Bruno
+  community.general.pacman:
+    name:
+      - bruno-bin
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+    state: present

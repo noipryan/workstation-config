@@ -1,0 +1,10 @@
+---
+- name: Install Browsers
+  community.general.pacman:
+    name:
+      - brave-bin
+      - microsoft-edge-stable-bin
+      - google-chrome
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+    state: present

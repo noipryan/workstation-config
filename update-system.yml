@@ -1,0 +1,7 @@
+---
+- name: Update system
+  hosts: localhost
+
+  roles:
+    - bruno
+    - update-system

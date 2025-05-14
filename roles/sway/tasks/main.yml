@@ -1,0 +1,9 @@
+---
+- name: Include distro specific variables
+  ansible.builtin.include_vars: "sway.yml"
+
+- name: Install common packages
+  become: true
+  ansible.builtin.package:
+    name: "{{ sway_packages }}"
+    state: present

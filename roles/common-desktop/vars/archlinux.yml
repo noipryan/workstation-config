@@ -1,0 +1,23 @@
+---
+common_desktop:
+  - alacritty
+  - diffuse
+  - filezilla
+  - fuse
+  - geany
+  - geany-themes  # AUR
+  - kitty
+  - kvantum
+  - kvantum-qt5
+  - kvantum-theme-materia
+  - libjxl
+  - lximage-qt
+  - materia-gtk-theme
+  - materia-kde
+  - nwg-look
+  - qbittorrent
+  - qt5ct
+  - qt6ct
+  - remmina
+  - terminator
+  - yad

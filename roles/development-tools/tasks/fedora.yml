@@ -1,0 +1,7 @@
+---
+- name: Install Development Tools
+  ansible.builtin.dnf:
+    name:
+      - "@Development Tools"
+      - gcc-c++
+    state: present

@@ -1,0 +1,14 @@
+---
+- name: Install Sway window manager and apps
+  hosts: localhost
+
+  roles:
+    - sway
+    - common-terminal
+    - common-desktop
+    - development-tools
+    - browsers
+    - bruno
+    - slack
+    - vscode
+    - zed-editor

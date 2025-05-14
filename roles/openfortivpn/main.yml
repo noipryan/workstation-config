@@ -1,0 +1,6 @@
+---
+- name: Install Openfortivpn
+  ansible.builtin.package:
+    name:
+      - openfortivpn
+    state: present

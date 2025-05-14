@@ -1,0 +1,8 @@
+---
+sway_packages:
+  - wlogout
+  - fontawesome-fonts
+  - fontawesome5-fonts
+  - kanshi
+  - wdisplays
+  - swaync

@@ -1,0 +1,25 @@
+---
+common_desktop:
+  - alacritty
+  - diffuse
+  - filezilla
+  - fuse
+  - geany
+  - geany-themes
+  - kitty
+  - kvantum
+  - libjxl
+  - libjxl-devel
+  - libjxl-utils
+  - lximage-qt
+  - materia-gtk-theme
+  - materia-kde
+  - materia-kde-kvantum
+  - nwg-look
+  - qbittorrent
+  - qt5ct
+  - qt6ct
+  - remmina
+  - remmina-plugins-rdp
+  - terminator
+  - yad

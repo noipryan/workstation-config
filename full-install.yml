@@ -1,0 +1,16 @@
+---
+- name: Install workstation
+  hosts: localhost
+
+  roles:
+    - browsers
+    - bruno
+    - common-terminal
+    - common-desktop
+    - development-tools
+    - openfortivpn
+    - slack
+    - tailscale
+    - virtualization
+    - vscode
+    - zed-editor

@@ -1,0 +1,24 @@
+---
+- name: Fetch Bruno tags from github
+  ansible.builtin.uri:
+    url: https://api.github.com/repos/usebruno/bruno/tags
+    method: GET
+    return_content: yes
+    status_code: 200
+    body_format: json
+  register: result
+
+- name: Set Bruno version vars
+  ansible.builtin.set_fact:
+    long_ver: "{{ result.json[0].name }}"
+    short_ver: "{{ result.json[0].name[1:] }}"
+
+- name: Print latest Bruno release
+  ansible.builtin.debug:
+    msg: "{{ result.json[0].name }}"
+
+- name: Install Bruno
+  ansible.builtin.dnf:
+    disable_gpg_check: true
+    name: 'https://github.com/usebruno/bruno/releases/download/{{ long_ver }}/bruno_{{ short_ver }}_x86_64_linux.rpm'
+    state: present

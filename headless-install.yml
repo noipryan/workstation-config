@@ -1,0 +1,7 @@
+---
+- name: Install minimal system
+  hosts: localhost
+
+  roles:
+    - common-terminal
+    - development-tools

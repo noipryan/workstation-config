@@ -1,0 +1,10 @@
+---
+- name: Include distro specific variables
+  ansible.builtin.include_vars: "{{ ansible_distribution | lower }}.yml"
+
+- name: Install Common Terminal packages
+  community.general.pacman:
+    name: "{{ common_terminal }}"
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+    state: present

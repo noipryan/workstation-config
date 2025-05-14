@@ -1,0 +1,15 @@
+---
+- name: Add VSCode Repo
+  ansible.builtin.yum_repository:
+    name: Edge-browser
+    description: Edge Browser
+    baseurl: https://packages.microsoft.com/yumrepos/vscode/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+
+- name: Install VSCode
+  ansible.builtin.dnf:
+    name:
+      - code
+    state: present

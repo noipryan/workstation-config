@@ -1,0 +1,23 @@
+---
+- name: Get the non root remote user
+  ansible.builtin.set_fact:
+    remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+- name: Install docker
+  community.general.pacman:
+    name: docker
+    state: present
+
+- name: Enable the docker service
+  become: true
+  ansible.builtin.systemd:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Add user to the 'docker' group
+  become: true
+  ansible.builtin.user:
+    name: "{{ remote_regular_user }}"
+    append: true
+    groups: docker

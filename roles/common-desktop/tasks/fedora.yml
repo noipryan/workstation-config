@@ -1,0 +1,15 @@
+---
+- name: Include distro specific variables
+  ansible.builtin.include_vars: "{{ ansible_distribution | lower }}.yml"
+
+- name: Add copr repo for nwg-look
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: tofik/nwg-shell
+
+- name: Install common packages
+  become: true
+  ansible.builtin.package:
+    name: "{{ common_desktop }}"
+    state: present

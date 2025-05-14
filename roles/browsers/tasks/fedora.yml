@@ -1,0 +1,37 @@
+---
+- name: Add Brave Browser Repo
+  ansible.builtin.yum_repository:
+    name: brave-browser
+    description: Brave Browser
+    baseurl: https://brave-browser-rpm-release.s3.brave.com/{{ ansible_architecture }}/
+    gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    gpgcheck: true
+    enabled: true
+
+- name: Add Edge Browser Repo
+  ansible.builtin.yum_repository:
+    name: Edge-browser
+    description: Edge Browser
+    baseurl: https://packages.microsoft.com/yumrepos/edge/
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgcheck: true
+    enabled: true
+
+- name: Install fedora-workstation-repositories to add Google Chrome Repo
+  ansible.builtin.dnf:
+    name: fedora-workstation-repositories
+    state: present
+
+- name: Enable Google Chrome repo
+  ansible.builtin.command: dnf config-manager setopt google-chrome.enabled=1
+  become: true
+  args:
+    creates: /etc/yum.repos.d/google-chrome.repo
+
+- name: Install browsers
+  ansible.builtin.dnf:
+    name:
+      - brave-browser
+      - microsoft-edge-stable
+      - google-chrome-stable
+    state: present

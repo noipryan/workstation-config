@@ -1,0 +1,4 @@
+skip_list:
+    - yaml[truthy]
+    - no_changed_when
+    - ignore_errors%

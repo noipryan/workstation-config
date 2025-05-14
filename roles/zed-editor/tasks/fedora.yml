@@ -1,0 +1,12 @@
+---
+- name: Add copr repo for Zed editor
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: che/zed
+
+- name: Install Zed editor
+  ansible.builtin.dnf:
+    name:
+      - zed
+    state: present

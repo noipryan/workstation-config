@@ -1,0 +1,17 @@
+---
+- name: Install repo for Slack
+  ansible.builtin.command: dnf config-manager addrepo --from-repofile='https://raw.githubusercontent.com/noipryan/slack-repo/refs/heads/master/slack.repo'
+  become: true
+  args:
+    creates: /etc/yum.repos.d/slack.repo
+
+- name: Add gpg key for Slack repo
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://slack.com/gpg/slack_pubkey_20240822.gpg
+
+- name: Install Slack
+  ansible.builtin.dnf:
+    name:
+      - slack
+    state: present

@@ -1,0 +1,6 @@
+---
+- name: Setup system
+  hosts: localhost
+
+  roles:
+    - docker
