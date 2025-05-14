@@ -5,7 +5,6 @@ common_desktop:
   - filezilla
   - fuse
   - geany
-  - geany-themes  # AUR
   - kitty
   - kvantum
   - kvantum-qt5
@@ -21,3 +20,6 @@ common_desktop:
   - remmina
   - terminator
   - yad
+
+common_desktop_aur:
+  - geany-themes

@@ -1,8 +1,9 @@
 ---
 - name: Install Zed Editor
-  community.general.pacman:
+  kewlfft.aur.aur:
     name:
       - zed-preview-bin
-    executable: yay
-    extra_args: --builddir /var/cache/yay
+    use: yay
     state: present
+  become: yes
+  become_user: aur_builder
