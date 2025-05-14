@@ -12,7 +12,6 @@ common_terminal:
   - helix
   - krb5
   - lldpd
-  - util-linux-user
   - neovim
   - nmap
   - nodejs

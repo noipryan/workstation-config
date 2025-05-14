@@ -25,5 +25,5 @@ sway_pacman_packages:
   - xdg-utils
 
 sway_aur_packages:
-  - wdisplays
+  #- wdisplays
   - wlogout
