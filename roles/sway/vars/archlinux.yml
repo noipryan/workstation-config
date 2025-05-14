@@ -1,5 +1,5 @@
 ---
-sway_packages:
+sway_pacman_packages:
   - brightnessctl
   - gnome-keyring
   - grim
@@ -20,8 +20,10 @@ sway_packages:
   - texlive-fontsextra  # fontawesome-fonts
   - waybar
   - wayland
-  - wdisplays
   - wf-recorder
   - wl-clipboard
-  - wlogout
   - xdg-utils
+
+sway_aur_packages:
+  - wdisplays
+  - wlogout

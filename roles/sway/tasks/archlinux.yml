@@ -2,9 +2,15 @@
 - name: Include distro specific variables
   ansible.builtin.include_vars: "{{ ansible_distribution | lower }}.yml"
 
-- name: Install Sway Desktop
+- name: Install Sway pacman packages
   community.general.pacman:
-    executable: yay
-    extra_args: --builddir /tmp/yay
-    name: "{{ sway_packages }}"
+    name: "{{ sway_pacman_packages }}"
     state: present
+
+- name: Install Sway AUR packages
+  kewlfft.aur.aur:
+    name: "{{ sway_aur_packages }}"
+    use: yay
+    state: present
+  become: yes
+  become_user: aur_builder
