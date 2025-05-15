@@ -1,16 +1,18 @@
 ---
-- name: Install workstation
+- name: Install Full System
   hosts: localhost
 
   roles:
-    - browsers
-    - bruno
-    - common-terminal
-    - common-desktop
-    - development-tools
-    - openfortivpn
-    - slack
-    - tailscale
-    - virtualization
-    - vscode
-    - zed-editor
+    - role: browsers
+    - role: bruno
+    - role: common-terminal
+    - role: common-desktop
+    - role: development-tools
+    - role: vscode
+    - role: zed-editor
+    - role: openfortivpn
+    - role: tailscale
+      when: VPN | bool
+    - role: slack
+    - role: virtualization
+      when: KVM | bool
