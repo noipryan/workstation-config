@@ -15,6 +15,7 @@ common_terminal:
   - neovim
   - nmap
   - nodejs
+  - openssh-server
   - python-pynvim
   - python-pip
   - python-netaddr
