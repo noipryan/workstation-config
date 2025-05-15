@@ -9,8 +9,9 @@
   #
   #   register: result
   #   changed_when: result.packages | length > 0
-  community.general.pacman:
-    executable: yay
-    extra_args: --builddir /var/cache/yay
+  kewlfft.aur.aur:
+    use: yay
     update_cache: true
     upgrade: true
+  become: yes
+  become_user: aur_builder
