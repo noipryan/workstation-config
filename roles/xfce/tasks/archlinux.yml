@@ -1,16 +1,26 @@
 ---
-- name: Include distro specific variables
-  ansible.builtin.include_vars: "{{ ansible_distribution | lower }}.yml"
-
-- name: Install Sway pacman packages
+- name: Install XFCE packages
   community.general.pacman:
-    name: "{{ sway_pacman_packages }}"
+    name:
+      - alsa-lib
+      - alsa-utils
+      - pipewire
+      - pipewire-alsa
+      - pipewire-jack
+      - pipewire-pulse
+      - sddm
+      - xfce4
+      - xfce4-goodies
+      - xfce4-whiskermenu-plugin
+      - xorg
+      - xorg-server
     extra_args: --needed
     state: present
 
 - name: Install Sway AUR packages
   kewlfft.aur.aur:
-    name: "{{ sway_aur_packages }}"
+    name:
+      - catppuccin-sddm-theme-mocha
     extra_args: --needed
     use: yay
     state: present
