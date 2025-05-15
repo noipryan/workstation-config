@@ -3,4 +3,5 @@
   community.general.pacman:
     name:
       - base-devel
+    extra_args: --needed
     state: present

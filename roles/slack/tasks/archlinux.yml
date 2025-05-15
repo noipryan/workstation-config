@@ -4,6 +4,7 @@
     name:
       - slack-desktop
     use: yay
+    extra_args: --needed
     state: present
   become: yes
   become_user: aur_builder

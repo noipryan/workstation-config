@@ -6,6 +6,7 @@
 - name: Install docker
   community.general.pacman:
     name: docker
+    extra_args: --needed
     state: present
 
 - name: Enable the docker service

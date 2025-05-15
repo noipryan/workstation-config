@@ -3,6 +3,7 @@
   community.general.pacman:
     name:
       - tailscale
+    extra_args: --needed
     state: present
 
 - name: Enable Tailscale service

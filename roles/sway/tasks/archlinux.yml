@@ -5,11 +5,13 @@
 - name: Install Sway pacman packages
   community.general.pacman:
     name: "{{ sway_pacman_packages }}"
+    extra_args: --needed
     state: present
 
 - name: Install Sway AUR packages
   kewlfft.aur.aur:
     name: "{{ sway_aur_packages }}"
+    extra_args: --needed
     use: yay
     state: present
   become: yes

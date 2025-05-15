@@ -5,6 +5,12 @@
 - name: Install Common Terminal packages
   community.general.pacman:
     name: "{{ common_terminal }}"
-    executable: yay
-    extra_args: --builddir /var/cache/yay
+    extra_args: --needed
     state: present
+
+- name: Enable ssh service
+  become: true
+  ansible.builtin.systemd:
+    name: sshd
+    state: started
+    enabled: true

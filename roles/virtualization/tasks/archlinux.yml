@@ -16,6 +16,7 @@
       - virt-install
       - virt-manager
       - virt-viewer
+    extra_args: --needed
     state: present
 
 - name: Add libvirt group
