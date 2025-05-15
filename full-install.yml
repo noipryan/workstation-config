@@ -7,7 +7,6 @@
     sway: false
     xfce: false
 
-
   roles:
     - role: browsers
     - role: bruno
@@ -19,12 +18,12 @@
     - role: openfortivpn
     - role: tailscale
       when: vpn | bool
-
     - role: slack
-
     - role: virtualization
       when: kvm | bool
     - role: sway
       when: sway | bool
     - role: xfce
       when: xfce | bool
+    - role: docker
+      when: "docker|default(false)|bool"
