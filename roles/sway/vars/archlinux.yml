@@ -1,6 +1,7 @@
 ---
 sway_pacman_packages:
   - brightnessctl
+  - fakeroot
   - gnome-keyring
   - grim
   - kanshi
@@ -8,6 +9,7 @@ sway_pacman_packages:
   - network-manager-applet
   - nwg-look
   - pavucontrol
+  - pipewire
   - playerctl
   - polkit
   - rofi
@@ -23,7 +25,8 @@ sway_pacman_packages:
   - wf-recorder
   - wl-clipboard
   - xdg-utils
+  - xorg-xwayland
 
 sway_aur_packages:
-  #- wdisplays
+  # - wdisplays
   - wlogout
