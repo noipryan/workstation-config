@@ -16,3 +16,7 @@
     - role: slack
     - role: virtualization
       when: KVM | bool
+    - role: sway
+      when: SWAY | bool
+    - role: xfce
+      when: XFCE | bool
