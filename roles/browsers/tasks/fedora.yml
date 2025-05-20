@@ -23,10 +23,8 @@
     state: present
 
 - name: Enable Google Chrome repo
-  ansible.builtin.command: dnf config-manager setopt google-chrome.enabled=1
-  become: true
-  args:
-    creates: /etc/yum.repos.d/google-chrome.repo
+  ansible.builtin.command: sudo dnf config-manager setopt google-chrome.enabled=1
+  changed_when: true
 
 - name: Install browsers
   ansible.builtin.dnf:
