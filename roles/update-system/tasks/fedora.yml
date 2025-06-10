@@ -1,4 +1,22 @@
 ---
+- name: Check packages to upgrade
+  ansible.builtin.dnf:
+    list: updates
+  register: packages
+
+- name: Show packages to upgrade
+  ansible.builtin.debug:
+    msg: "{{ packages }}"
+
+- name: Show packages to upgrade
+  ansible.builtin.debug:
+    msg: >-
+      {%- set output=[] -%}
+      {%- for p in packages.results -%}
+      {{ output.append('%-40s' % (p.name ~ '-' ~ p.version) ~ ' | repo: ' ~ p.repo) }}
+      {%- endfor -%}
+      {{ output }}
+
 - name: Upgrade all packages
   ansible.builtin.dnf:
     name: "*"
