@@ -3,6 +3,7 @@ common_desktop:
   - alacritty
   - diffuse
   - filezilla
+  - flatpak
   - fuse
   - geany
   - geany-themes

@@ -15,13 +15,15 @@ common_terminal:
   - neovim
   - nmap
   - nodejs
+  - openssh-askpass
+  - openssl
   - python3-neovim
   - python3-pip
   - python3-netaddr
   - python3-numpy
   - python3-pandas
   - screen
-  - openssh-askpass
+  - sshaskpass
   - starship
   - vim-enhanced
   - wget
