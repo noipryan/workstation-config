@@ -16,6 +16,7 @@ common_terminal:
   - nmap
   - nodejs
   - openssh
+  - openssl
   - python-pynvim
   - python-pip
   - python-netaddr

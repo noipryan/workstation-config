@@ -1,0 +1,71 @@
+scp -r swainrl@10.2.192.159:~/.ssh ~/
+scp -r swainrl@10.2.192.159:~/workstation-config ~/
+cd workstation-config/
+DISK='/dev/vda'
+./encrypted_partitioning.sh $DISK
+dnf --installroot=/mnt --releasever=42 install '@core' '@standard' '@minimal-install' langpacks-{en,tr}* glibc-all-langpacks kernel{,-core,-devel,-modules,-modules-extra,-headers} grub2-efi-x64 grub2-efi-x64-modules shim vim-enhanced git
+dnf --installroot=/mnt --releasever=42 install '@core' '@standard' '@minimal-install' langpacks-{en,tr}* glibc-all-langpacks kernel{,-core,-devel,-modules,-modules-extra,-headers} grub2-efi-x64 grub2-efi-x64-modules shim vim-enhanced git --use-host-config
+sudo dnf group list
+sudo dnf group list hidden
+sudo dnf group list
+dnf group list hidden
+dnf4 group list hidden
+dnf group list all
+dnf group list ?
+dnf group list --hiden
+dnf group list --hidden
+dnf group info workstation-product
+dnf --installroot=/mnt --releasever=42 install '@core' '@standard' '@workstation-product' langpacks-{en,tr}* glibc-all-langpacks kernel{,-core,-devel,-modules,-modules-extra,-headers} grub2-efi-x64 grub2-efi-x64-modules shim vim-enhanced git --use-host-config
+dnf --installroot=/mnt --releasever=42 install '@core' '@standard' langpacks-{en,tr}* glibc-all-langpacks kernel{,-core,-devel,-modules,-modules-extra,-headers} grub2-efi-x64 grub2-efi-x64-modules shim vim-enhanced git --use-host-config
+chroot /mnt /bin/bash
+chroot /mnt
+ls /mnt
+genfstab -p /mnt >> /mnt/etc/fstab
+dnf install arch-install-scripts
+genfstab -p /mnt >> /mnt/etc/fstab
+chroot /mnt /bin/bash
+rm -f /mnt/etc/resolv.conf
+touch /mnt/etc/resolv.conf
+chroot /mnt /bin/bash
+cd /mnt/
+rm -f /mnt/etc/resolv.conf
+touch etc/resolv.conf
+for f in dev etc/resolv.conf proc sys sys/firmware/efi/efivars; do   sudo mount --bind /$f $f; done
+chroot /mnt /bin/bash
+history
+exit
+
+dnf install --releasever=42 install '@core' '@standard' langpacks-{en,tr}* glibc-all-langpacks kernel{,-core,-devel,-modules,-modules-extra,-headers} grub2-efi-x64 grub2-efi-x64-modules shim vim-enhanced git
+ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+echo 'KEYMAP=us' > /etc/vconsole.conf
+echo 'FONT=eurlatgr' >> /etc/vconsole.conf
+cat /etc/vconsole.conf
+echo 'fedora-bootstrap' > /etc/hostname
+passwd
+useradd -mG wheel -c User swainrl
+passwd swainrl
+ls /mnt
+exit
+vim /etc/fstab
+ls /etc/
+vim /etc/default/grub
+dnf reinstall grub2-efi grub2-efi-modules shim-\*
+exit
+dnf reinstall grub2-efi grub2-efi-modules shim-\*
+cd /mnt
+sudo rm -f etc/resolv.conf
+sudo touch etc/resolv.conf
+ls /mnt
+touch etc/resolv.conf
+cd etc
+ls
+ll
+exit
+dnf reinstall grub2-efi grub2-efi-modules shim-\*
+grub2-mkconfig -o /boot/grub2/grub.cfg
+rm -f /boot/efi/EFI/fedora/grub.cfg
+dnf reinstall grub2-common
+y
+dnf reinstall grub2-common
+history
