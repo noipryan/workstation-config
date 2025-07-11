@@ -6,10 +6,21 @@
 
 - name: Show packages to upgrade
   ansible.builtin.debug:
+<<<<<<< HEAD
     msg: >-
       {%- set output=[] -%}
       {%- for p in packages.results -%}
       {{ output.append('%-60s' % (p.name ~ '-' ~ p.version) ~ ' | repo: ' ~ p.repo) }}
+=======
+    msg: "{{ packages }}"
+
+- name: Show packages to upgrade
+  ansible.builtin.debug:
+    msg: >-
+      {%- set output=[] -%}
+      {%- for p in packages.results -%}
+      {{ output.append('%-40s' % (p.name ~ '-' ~ p.version) ~ ' | repo: ' ~ p.repo) }}
+>>>>>>> refs/remotes/origin/main
       {%- endfor -%}
       {{ output }}
 

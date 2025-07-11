@@ -1,0 +1,10 @@
+# Do these steps to fix the sleep issue on the GPD win max 
+# This will prevent these PCI Devices from waking the laptop
+
+# Add these lines to this file /etc/udev/rules.d/20-wm2-i2c-nowake.rules
+
+SUBSYSTEM=="i2c", KERNEL=="i2c-PNP0C50:00", ATTR{power/wakeup}="disabled"
+SUBSYSTEM=="i2c", KERNEL=="i2c-GXTP7385:00", ATTR{power/wakeup}="disabled"
+
+# Run this command next
+for i in $(cat /proc/acpi/wakeup|grep enabled|awk '{print $1}'|xargs); do case $i in SLPB|XHCI);; *) echo $i|tee /proc/acpi/wakeup ; esac; done
