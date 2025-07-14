@@ -1,11 +1,6 @@
 ---
 - name: Install Full System
   hosts: localhost
-  vars:
-    kvm: false
-    vpn: false
-    sway: false
-    xfce: false
 
   roles:
     - role: browsers
@@ -16,14 +11,16 @@
     - role: vscode
     - role: zed-editor
     - role: openfortivpn
+      when: "vpn|default(false)|bool"
     - role: tailscale
-      when: vpn | bool
+      when: "vpn|default(false)|bool"
     - role: slack
+      when: "slack|default(false)|bool"
     - role: virtualization
-      when: kvm | bool
+      when: "kvm|default(false)|bool"
     - role: sway
-      when: sway | bool
+      when: "sway|default(false)|bool"
     - role: xfce
-      when: xfce | bool
+      when: "xfce|default(false)|bool"
     - role: docker
       when: "docker|default(false)|bool"
