@@ -23,10 +23,10 @@ common_terminal:
   - python3-numpy
   - python3-pandas
   - screen
-  - sshaskpass
   - starship
   - vim-enhanced
   - wget
+  - x11-ssh-askpass
   - yamllint
   - zellij
   - zoxide

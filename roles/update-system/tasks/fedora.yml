@@ -10,7 +10,6 @@
       {%- set output=[] -%}
       {%- for p in packages.results -%}
       {{ output.append('%-60s' % (p.name ~ '-' ~ p.version) ~ ' | repo: ' ~ p.repo) }}
-    msg: "{{ packages }}"
 
 - name: Upgrade all packages
   ansible.builtin.dnf:
